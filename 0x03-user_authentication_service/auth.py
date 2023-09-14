@@ -28,5 +28,6 @@ class Auth:
             raise ValueError('User {} already exists'.format(email))
         else:
             return self._db.add_user(email, _hash_password(password))
+    
         
         

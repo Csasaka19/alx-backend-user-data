@@ -30,7 +30,7 @@ class DB:
             DBSession = sessionmaker(bind=self._engine)
             self.__session = DBSession()
         return self.__session
-    
+
     def add_user(self, email: str, hashed_password: str) -> User:
         '''Method that saves a new user instance to the database'''
         new_user = User(email=email, hashed_password=hashed_password)
@@ -41,9 +41,9 @@ class DB:
             self._session.rollback()
             new_user = None
         return new_user
-    
+
     def find_user_by(self, **kwargs) -> User:
-        '''Method takes in arbitrary keyword arguments and returns the 
+        '''Method takes in arbitrary keyword arguments and returns the
         first row found in the users table as filtered by the method’s
         input arguments '''
         fields = User.__table__.columns.keys()
