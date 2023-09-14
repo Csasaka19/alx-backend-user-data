@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 '''This is the user module'''
-import bcrypt
 from sqlalchemy import Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import validates
 
 
 Base = declarative_base()
